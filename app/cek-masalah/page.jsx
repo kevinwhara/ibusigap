@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import { ChartColumnIncreasing, Lightbulb } from 'lucide-react';
+import { ChartColumnIncreasing, Lightbulb, BriefcaseMedical } from 'lucide-react';
 import { Check } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 
@@ -38,11 +38,24 @@ export default function CekMasalah() {
     };
 
     const handleSubmit = () => {
-        console.log('Data dikirim:', {
-            complaints: complaints.filter(item => item.checked),
-            formData
-        });
+        const aiPayload = {
+            mainComplaints: complaints
+                .filter(item => item.checked)
+                .map(item => item.name),
+
+            complaintDetail: formData.complaintDetail,
+            duration: formData.duration,
+            intensity: formData.intensity.split(' ')[0],
+
+            bloodPressure: {
+                systolic: Number(formData.systolic),
+                diastolic: Number(formData.diastolic)
+            }
+        };
+
+        console.log(aiPayload);
     };
+
 
 
     return (
@@ -57,7 +70,7 @@ export default function CekMasalah() {
                         {/* Heading */}
                         <div className="flex flex-col gap-2">
                             <div className="flex items-center gap-2 text-[#ff4284] text-sm font-bold uppercase tracking-wider">
-                                <span className="material-symbols-outlined text-[20px]">medical_services</span>
+                                <BriefcaseMedical className="w-6 h-6" />
                                 Deteksi Dini
                             </div>
                             <h1 className="text-3xl md:text-4xl font-black leading-tight tracking-tight">
@@ -232,11 +245,11 @@ export default function CekMasalah() {
                                 </div>
                                 <h3 className="text-text-main font-bold text-lg">Rekomendasi Otomatis</h3>
                             </div>
-                                <div className="flex gap-3 bg-white p-3 rounded-xl shadow-sm border border-primary/10">
-                                    <div>
-                                        <p className="text-sm mt-0.5">Tambahkan: Telur rebus, dada ayam, atau tahu tempe di menu makan malam.</p>
-                                    </div>
+                            <div className="flex gap-3 bg-white p-3 rounded-xl shadow-sm border border-primary/10">
+                                <div>
+                                    <p className="text-sm mt-0.5">Tambahkan: Telur rebus, dada ayam, atau tahu tempe di menu makan malam.</p>
                                 </div>
+                            </div>
                         </div>
                     </div>
 
