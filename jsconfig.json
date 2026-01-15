@@ -2,9 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"],  // alias untuk semua root
-      "@components/*": ["components/*"] // alias khusus untuk components
-    },
-    "jsx": "react"
+      "@/*": ["app/*"]
+    }
   }
 }

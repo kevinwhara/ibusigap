@@ -1,10 +1,14 @@
-import React from "react";
+import Navbar from "@/components/Navbar";
 
 export default function CekGizi() {
     return (
-        <div className="flex min-h-screen items-center justify-center font-sans">
-            <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 sm:items-start">
-                <h1 className="text-5xl font-bold">Cek Gizi Page</h1>
+        <div className="min-h-screen font-sans flex flex-col overflow-x-hidden">
+
+            <Navbar />
+
+            {/* Main Content */}
+            <main className="grow w-full max-w-7xl mx-auto px-4 md:px-10 py-8">
+
             </main>
         </div>
     );
