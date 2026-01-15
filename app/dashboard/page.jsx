@@ -1,9 +1,10 @@
 import React from "react";
-import { Settings } from "lucide-react";
+import Link from "next/link";
+import { Settings, LayoutDashboard, FileClock, UtensilsCrossed, HeartCrack, HeartPulse, CircleAlert, Apple, Plus } from "lucide-react";
 
 export default function Dashboard() {
     return (
-        <div className="flex h-screen w-full font-sans overflow-hidden bg-background-light text-[#1d0c12]">
+        <div className="flex h-screen w-full font-sans overflow-hidden text-[#1d0c12]">
             {/* Sidebar */}
             <aside className="hidden lg:flex flex-col w-72 h-full border-r border-[#eacdd7] bg-white p-6 shrink-0">
                 <div className="flex flex-col gap-8 h-full">
@@ -25,20 +26,20 @@ export default function Dashboard() {
                     {/* Navigation */}
                     <nav className="flex flex-col gap-2 flex-1">
                         <a className="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary transition-colors" href="#">
-                            <span className="material-symbols-outlined fill-1">grid_view</span>
+                            <LayoutDashboard className="w-6 h-6" />
                             <span className="text-sm font-bold">Dashboard</span>
                         </a>
                         <a className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-primary/5 hover:text-primary transition-colors" href="#">
-                            <span className="material-symbols-outlined">clinical_notes</span>
+                            <FileClock className="w-6 h-6" />
                             <span className="text-sm font-medium">Riwayat Medis</span>
                         </a>
-                        <a className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-primary/5 hover:text-primary transition-colors" href="#">
-                            <span className="material-symbols-outlined">restaurant_menu</span>
+                        <a className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hove  r:bg-primary/5 hover:text-primary transition-colors" href="#">
+                            <UtensilsCrossed className="w-6 h-6" />
                             <span className="text-sm font-medium">Jurnal Makanan</span>
                         </a>
                         <a className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-primary/5 hover:text-primary transition-colors" href="#">
-                            <span className="material-symbols-outlined">menu_book</span>
-                            <span className="text-sm font-medium">Artikel</span>
+                            <HeartCrack className="w-6 h-6" />
+                            <span className="text-sm font-medium">Deteksi Gangguan</span>
                         </a>
                         <a className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-primary/5 hover:text-primary transition-colors" href="#">
                             <Settings className="w-6 h-6" />
@@ -57,25 +58,17 @@ export default function Dashboard() {
             </aside>
 
             {/* Main Content */}
-            <main className="flex-1 h-full overflow-y-auto bg-background-light p-4 md:p-8 lg:p-10">
-                <div className="flex flex-col max-w-[1200px] mx-auto gap-8">
+            <main className="flex-1 h-full overflow-y-auto p-4 md:p-4 lg:p-10">
+                <div className="flex flex-col    mx-auto gap-8">
                     {/* Page Heading */}
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
                         <div className="flex flex-col gap-2">
-                            <h1 className="text-3xl md:text-4xl font-black tracking-tight">
+                            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">
                                 Ringkasan Kesehatan
                             </h1>
                             <p className="text-slate-500 text-base md:text-lg">
                                 Pantau kesehatan Bunda dan janin hari ini.
                             </p>
-                        </div>
-                        <div className="flex gap-2">
-                            <button className="bg-white p-2 rounded-full shadow-sm text-primary hover:bg-primary/10 transition">
-                                <span className="material-symbols-outlined">notifications</span>
-                            </button>
-                            <button className="bg-white p-2 rounded-full shadow-sm text-primary hover:bg-primary/10 transition">
-                                <span className="material-symbols-outlined">calendar_today</span>
-                            </button>
                         </div>
                     </div>
 
@@ -84,37 +77,46 @@ export default function Dashboard() {
                         {/* General Health */}
                         <div className="flex flex-col gap-3 rounded-xl p-6 bg-white border border-primary/20 shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
                             <div className="flex items-center gap-2">
-                                <div className="p-1.5 bg-green-100 rounded-lg text-green-600">
-                                    <span className="material-symbols-outlined text-xl">check_circle</span>
+                                <div className="p-2 bg-green-100 rounded-lg text-green-600">
+                                    <HeartPulse className="w-7 h-7" />
                                 </div>
                                 <p className="text-slate-500 text-sm font-medium uppercase tracking-wider">Kesehatan Umum</p>
                             </div>
                             <p className="text-3xl font-bold">Baik</p>
                             <p className="text-slate-400 text-sm">Tekanan darah stabil</p>
+                            <Link href="/cek-kesehatan" className="w-fit px-6 py-2 bg-green-600 text-white font-medium rounded-lg hover:bg-green-600/90 transition shadow-lg shadow-primary/20 whitespace-nowrap">
+                                Periksa Kesehatan
+                            </Link>
                         </div>
 
                         {/* Daily Risk */}
                         <div className="flex flex-col gap-3 rounded-xl p-6 bg-white border border-primary/20 shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
                             <div className="flex items-center gap-2">
                                 <div className="p-1.5 bg-amber-100 rounded-lg text-amber-600">
-                                    <span className="material-symbols-outlined text-xl">priority_high</span>
+                                    <CircleAlert className="w-7 h-7" />
                                 </div>
                                 <p className="text-slate-500 text-sm font-medium uppercase tracking-wider">Risiko Hari Ini</p>
                             </div>
                             <p className="text-3xl font-bold">Perlu Perhatian</p>
                             <p className="text-primary text-sm font-medium">Tidur & Zat Besi</p>
+                            <Link href="/cek-masalah" className="w-fit px-6 py-2 bg-amber-600 text-white font-medium rounded-lg hover:bg-amber-600/90 transition shadow-lg shadow-primary/20 whitespace-nowrap">
+                                Periksa Gangguan
+                            </Link>
                         </div>
 
                         {/* Nutrition Status */}
                         <div className="flex flex-col gap-3 rounded-xl p-6 bg-white border border-primary/20 shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
                             <div className="flex items-center gap-2">
                                 <div className="p-1.5 bg-blue-100 rounded-lg text-blue-600">
-                                    <span className="material-symbols-outlined text-xl">trending_up</span>
+                                    <Apple className="w-7 h-7" />
                                 </div>
                                 <p className="text-slate-500 text-sm font-medium uppercase tracking-wider">Status Gizi</p>
                             </div>
                             <p className="text-3xl font-bold">Perlu Ditingkatkan</p>
                             <p className="text-primary text-sm font-medium">Asupan Kalori Harian</p>
+                            <Link href="/cek-gizi" className="w-fit px-6 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-600/90 transition shadow-lg shadow-primary/20 whitespace-nowrap">
+                                Periksa Nutrisi
+                            </Link>
                         </div>
                     </div>
 
@@ -184,16 +186,16 @@ export default function Dashboard() {
                         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                             <div className="flex items-center gap-4">
                                 <div className="bg-primary text-white p-3 rounded-full">
-                                    <span className="material-symbols-outlined">add</span>
+                                    <Plus className="w-5 h-5" />
                                 </div>
                                 <div>
                                     <h4 className="font-bold text-[#1d0c12]">Catat Perkembangan Hari Ini</h4>
                                     <p className="text-sm text-slate-500">Jangan lupa catat berat badan & mood Bunda.</p>
                                 </div>
                             </div>
-                            <button className="px-6 py-2 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition shadow-lg shadow-primary/20 whitespace-nowrap">
+                            <Link href="/cek-kesehatan" className="px-6 py-2 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition shadow-lg shadow-primary/20 whitespace-nowrap">
                                 Catat Sekarang
-                            </button>
+                            </Link>
                         </div>
                     </div>
 
