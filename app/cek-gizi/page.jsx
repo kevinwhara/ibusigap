@@ -1,15 +1,15 @@
 "use client";
 import React, { useState } from 'react';
-import { 
-  UtensilsCrossed, 
-  Sunrise, 
-  Moon, 
-  SunDim, 
-  Droplets, 
-  Plus, 
-  Minus, 
-  Pill, 
-  BarChart2 
+import {
+  UtensilsCrossed,
+  Sunrise,
+  Moon,
+  SunDim,
+  Droplets,
+  Plus,
+  Minus,
+  Pill,
+  BarChart2
 } from 'lucide-react';
 
 import Navbar from '@/components/Navbar';
@@ -29,7 +29,7 @@ function NutritionCheck() {
     setWaterGlasses(prev => Math.max(prev - 1, 0));
   };
 
-  const handleSave = () => {
+  const handleSubmit = () => {
     console.log({
       breakfast,
       lunch,
@@ -55,7 +55,7 @@ function NutritionCheck() {
 
           <div className="grid grid-cols-1 lg:grid-cols-7 gap-6">
             <div className="lg:col-span-7 flex flex-col gap-6">
-              
+
               {/* Meal Log Card */}
               <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#eacdd7]/50">
                 <div className="flex items-center gap-3 mb-6 border-b border-[#eacdd7] pb-4">
@@ -64,7 +64,7 @@ function NutritionCheck() {
                   </span>
                   <h2 className="text-xl font-bold">Catatan Makan (Meal Log)</h2>
                 </div>
-                
+
                 <div className="flex flex-col gap-6">
                   {/* Breakfast */}
                   <div className="form-group">
@@ -72,7 +72,7 @@ function NutritionCheck() {
                       <Sunrise className="text-orange-400" size={20} />
                       Makan Pagi
                     </label>
-                    <textarea 
+                    <textarea
                       className="w-full resize-none rounded-xl border border-[#eacdd7] bg-[#f8f5f6] p-4 text-base placeholder:text-[#a14563]/60 focus:border-[#FF4081] focus:ring-1 focus:ring-[#FF4081] transition-all outline-none"
                       placeholder="Contoh: Nasi uduk, 1 butir telur dadar, tempe orek..."
                       rows="2"
@@ -80,14 +80,14 @@ function NutritionCheck() {
                       onChange={(e) => setBreakfast(e.target.value)}
                     />
                   </div>
-                  
+
                   {/* Lunch */}
                   <div className="form-group">
                     <label className="flex items-center gap-2 text-sm font-semibold mb-2">
                       <SunDim className="text-yellow-500" size={20} />
                       Makan Siang
                     </label>
-                    <textarea 
+                    <textarea
                       className="w-full resize-none rounded-xl border border-[#eacdd7] bg-[#f8f5f6] p-4 text-base placeholder:text-[#a14563]/60 focus:border-[#FF4081] focus:ring-1 focus:ring-[#FF4081] transition-all outline-none"
                       placeholder="Contoh: Nasi putih, ikan bakar, sayur bayam, buah pisang..."
                       rows="2"
@@ -95,14 +95,14 @@ function NutritionCheck() {
                       onChange={(e) => setLunch(e.target.value)}
                     />
                   </div>
-                  
+
                   {/* Dinner */}
                   <div className="form-group">
                     <label className="flex items-center gap-2 text-sm font-semibold mb-2">
                       <Moon className="text-indigo-400" size={20} />
                       Makan Malam
                     </label>
-                    <textarea 
+                    <textarea
                       className="w-full resize-none rounded-xl border border-[#eacdd7] bg-[#f8f5f6] p-4 text-base placeholder:text-[#a14563]/60 focus:border-[#FF4081] focus:ring-1 focus:ring-[#FF4081] transition-all outline-none"
                       placeholder="Contoh: Roti gandum, susu ibu hamil, salad buah..."
                       rows="2"
@@ -123,20 +123,20 @@ function NutritionCheck() {
                       Air Minum (Gelas)
                     </label>
                     <div className="relative flex items-center">
-                      <button 
+                      <button
                         className="absolute left-2 p-2 text-[#a14563] hover:text-[#FF4081] hover:bg-[#ffeef5] rounded-lg transition-colors"
                         type="button"
                         onClick={handleWaterDecrease}
                       >
                         <Minus size={20} />
                       </button>
-                      <input 
+                      <input
                         className="w-full text-center rounded-xl border border-[#eacdd7] bg-[#f8f5f6] py-3 px-12 text-lg font-bold focus:border-[#FF4081] focus:ring-1 focus:ring-[#FF4081] outline-none"
                         type="number"
                         value={waterGlasses}
                         onChange={(e) => setWaterGlasses(parseInt(e.target.value) || 0)}
                       />
-                      <button 
+                      <button
                         className="absolute right-2 p-2 text-[#a14563] hover:text-[#FF4081] hover:bg-[#ffeef5] rounded-lg transition-colors"
                         type="button"
                         onClick={handleWaterIncrease}
@@ -146,7 +146,7 @@ function NutritionCheck() {
                     </div>
                     <p className="text-xs text-[#a14563] mt-2 text-center">Target: 8 gelas / hari</p>
                   </div>
-                  
+
                   {/* Tablet */}
                   <div>
                     <label className="flex items-center gap-2 text-sm font-semibold mb-3">
@@ -156,9 +156,9 @@ function NutritionCheck() {
                     <div className="flex items-center justify-between rounded-xl border border-[#eacdd7] bg-[#f8f5f6] p-3">
                       <span className="text-sm font-medium pl-1">Sudah diminum?</span>
                       <label className="relative inline-flex items-center cursor-pointer">
-                        <input 
-                          type="checkbox" 
-                          className="sr-only peer" 
+                        <input
+                          type="checkbox"
+                          className="sr-only peer"
                           checked={tabletTaken}
                           onChange={() => setTabletTaken(!tabletTaken)}
                         />
@@ -171,9 +171,9 @@ function NutritionCheck() {
               </div>
 
               {/* Save Button */}
-              <button 
+              <button
                 className="w-full bg-[#FF4081] hover:bg-[#d6336c] text-white font-bold py-4 px-6 rounded-xl shadow-lg shadow-[#FF4081]/20 transition-all transform active:scale-[0.99] flex items-center justify-center gap-2 text-lg"
-                onClick={handleSave}
+                onClick={handleSubmit}
               >
                 <BarChart2 size={24} />
                 Simpan & Analisis Gizi
