@@ -1,8 +1,10 @@
 "use client";
 import React, { useState } from 'react';
-import { ChartColumnIncreasing, Lightbulb, BriefcaseMedical } from 'lucide-react';
-import { Check } from 'lucide-react';
+import { BriefcaseMedical, Check } from 'lucide-react';
 import Navbar from '@/components/Navbar';
+import SubmitButton from '@/components/SubmitButton';
+import AiOutput from '@/components/AiOutput';
+import Footer from '@/components/Footer';
 
 export default function CekMasalah() {
 
@@ -54,6 +56,7 @@ export default function CekMasalah() {
         };
 
         console.log(aiPayload);
+        alert('Data berhasil disimpan!');
     };
 
 
@@ -64,7 +67,7 @@ export default function CekMasalah() {
             <Navbar />
 
             {/* Main Content */}
-            <main className="grow w-full max-w-7xl mx-auto px-4 md:px-10 py-8">
+            <main className=" w-full max-w-7xl mx-auto px-4 md:px-10 py-8">
                 <div className="gap-8 lg:gap-12">
                     <div className="lg:col-span-7 xl:col-span-8 flex flex-col gap-8">
                         {/* Heading */}
@@ -225,36 +228,15 @@ export default function CekMasalah() {
                         </div>
 
                         {/* Submit Action */}
-                        <div className="flex justify-end pt-2 pb-10">
-                            <button
-                                className="w-full md:w-auto bg-[#ff4284] hover:bg-[#d6306d] text-white font-bold py-3.5 px-8 rounded-xl shadow-lg shadow-[#ff4284]/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2"
-                                onClick={handleSubmit}
-                            >
-                                <span className="material-symbols-outlined"></span>
-                                <ChartColumnIncreasing />
-                                Analisis Keluhan
-                            </button>
-                        </div>
+                        <SubmitButton eventhandler={handleSubmit} />
 
                         {/* AI Suggestion */}
-                        <div className="bg-primary/5 rounded-2xl p-6 border border-primary/20 relative overflow-hidden">
-                            <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
-                            <div className="flex items-center gap-2 mb-4 relative z-10">
-                                <div className="p-1.5 bg-primary text-white rounded-lg shadow-sm">
-                                    <Lightbulb className="w-6 h-6" />
-                                </div>
-                                <h3 className="text-text-main font-bold text-lg">Rekomendasi Otomatis</h3>
-                            </div>
-                            <div className="flex gap-3 bg-white p-3 rounded-xl shadow-sm border border-primary/10">
-                                <div>
-                                    <p className="text-sm mt-0.5">Tambahkan: Telur rebus, dada ayam, atau tahu tempe di menu makan malam.</p>
-                                </div>
-                            </div>
-                        </div>
+                        <AiOutput message="Belum ada analisis ..." />
                     </div>
 
                 </div>
             </main>
+            <Footer />
         </div>
     );
 }

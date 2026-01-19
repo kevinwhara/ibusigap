@@ -37,7 +37,6 @@ export default function SignupPage() {
                         </div>
                     </div>
 
-                    {/* ✅ Right Panel (DIUBAH JADI SIGN UP) */}
                     {/* Right Panel */}
                     <div className="w-full lg:w-1/2 flex justify-center items-center p-6 lg:p-12 xl:p-20 overflow-y-hidden">
                         <div className="w-full max-w-[520px] flex flex-col gap-8 mt-16 lg:mt-0">

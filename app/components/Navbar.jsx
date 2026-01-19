@@ -118,7 +118,7 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            
+
             {/* Additional mobile-only elements if needed */}
             <div className="pt-4 mt-2 border-t border-gray-100">
               <div className="text-xs text-gray-500 px-4">

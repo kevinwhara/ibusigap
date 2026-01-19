@@ -1,7 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { Settings, LayoutDashboard, FileClock, UtensilsCrossed, HeartCrack, HeartPulse, CircleAlert, Apple, Plus, Menu, X } from "lucide-react";
+import Footer from "@/components/Footer";
+import { HeartPulse, CircleAlert, Apple, Plus, Menu } from "lucide-react";
+import Sidebar from "@/components/Sidebar";
 
 export default function Dashboard() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -15,109 +17,21 @@ export default function Dashboard() {
     };
 
     return (
-        <div className="flex h-screen w-full font-sans overflow-hidden text-[#1d0c12]">
+        <div className="flex h-screen w-full font-sans">
             {/* Sidebar */}
-            <aside className={`
-                fixed lg:relative inset-y-0 left-0 z-40
-                transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} 
-                lg:transform-none lg:translate-x-0
-                flex flex-col w-64 lg:w-72 h-full border-r border-[#eacdd7] bg-white p-6 shrink-0
-                transition-transform duration-300 ease-in-out
-            `}>
-                <div className="flex flex-col gap-8 h-full">
-                    {/* Profile Header */}
-                    <div className="flex items-center justify-between pb-6 border-b border-[#eacdd7]">
-                        <div className="flex items-center gap-3">
-                            <div
-                                className="bg-center bg-no-repeat aspect-square rounded-full w-12 h-12 ring-2 ring-primary/20"
-                                style={{
-                                    backgroundImage:
-                                        'url("https://lh3.googleusercontent.com/aida-public/AB6AXuA8MqkZ6Br_SKfaNmfvnGQeCB_030qqh_GY_mFk8qCAucykA9SBESbdhtsLHKdlx5gZickFNI7cfxoeggPoTq0uBF8otvq_PN4VMCSqMBD71k2q1FmXtUvdcKLRL_0n54iSB8I3LtdK9FbwY5-eRvvj7BccRN76o4zS3hvGhCZBHALXwWOkmS8V7-dQvTsWHlfSSlC4gmixC_Ttd8hVUzgloMWfzdFKMxy1iHPXn4v3Q2f_kpgxLvJ2mSwWHRd5OYcgnPogukAVan0")',
-                                }}
-                            ></div>
-                            <div className="flex flex-col">
-                                <h1 className="text-lg font-bold leading-tight">Bunda Sarah</h1>
-                                <p className="text-primary text-sm font-medium">Minggu ke-24</p>
-                            </div>
-                        </div>
-                        {/* Close button for mobile */}
-                        <button 
-                            className="lg:hidden p-2 rounded-lg hover:bg-primary/5"
-                            onClick={closeSidebar}
-                        >
-                            <X className="w-5 h-5" />
-                        </button>
-                    </div>
-
-                    {/* Navigation */}
-                    <nav className="flex flex-col gap-2 flex-1">
-                        <a 
-                            className="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary transition-colors" 
-                            href="#"
-                            onClick={closeSidebar}
-                        >
-                            <LayoutDashboard className="w-6 h-6" />
-                            <span className="text-sm font-bold">Dashboard</span>
-                        </a>
-                        <a 
-                            className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-primary/5 hover:text-primary transition-colors" 
-                            href="#"
-                            onClick={closeSidebar}
-                        >
-                            <FileClock className="w-6 h-6" />
-                            <span className="text-sm font-medium">Riwayat Medis</span>
-                        </a>
-                        <a 
-                            className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-primary/5 hover:text-primary transition-colors" 
-                            href="#"
-                            onClick={closeSidebar}
-                        >
-                            <UtensilsCrossed className="w-6 h-6" />
-                            <span className="text-sm font-medium">Jurnal Makanan</span>
-                        </a>
-                        <a 
-                            className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-primary/5 hover:text-primary transition-colors" 
-                            href="#"
-                            onClick={closeSidebar}
-                        >
-                            <HeartCrack className="w-6 h-6" />
-                            <span className="text-sm font-medium">Deteksi Gangguan</span>
-                        </a>
-                        <a 
-                            className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-primary/5 hover:text-primary transition-colors" 
-                            href="#"
-                            onClick={closeSidebar}
-                        >
-                            <Settings className="w-6 h-6" />
-                            <span className="text-sm font-medium">Pengaturan</span>
-                        </a>
-                    </nav>
-
-                    {/* Footer / Logout */}
-                    <div className="mt-auto">
-                        <button 
-                            className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-500 hover:text-red-500 w-full transition-colors"
-                            onClick={closeSidebar}
-                        >
-                            <span className="material-symbols-outlined">logout</span>
-                            <span className="text-sm font-medium">Keluar</span>
-                        </button>
-                    </div>
-                </div>
-            </aside>
+            <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
 
             {/* Overlay for mobile when sidebar is open */}
             {isSidebarOpen && (
-                <div 
+                <div
                     className="fixed inset-0 bg-black/50 z-30 lg:hidden"
                     onClick={closeSidebar}
                 />
             )}
 
             {/* Main Content */}
-            <main className="flex-1 h-full overflow-y-auto p-4 md:p-4 lg:p-10">
-                <div className="flex flex-col mx-auto gap-8">
-                    {/* Page Heading - DIHAPUS TOMBOL HAMBURGER DI SINI */}
+            <main className="flex-1 h-screen overflow-y-auto">
+                <div className="flex flex-col mx-auto gap-8 p-4 md:p-4 lg:p-10">
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
                         <div className="flex flex-col gap-2">
                             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">
@@ -259,12 +173,13 @@ export default function Dashboard() {
                     {/* Bottom Spacer */}
                     <div className="h-10"></div>
                 </div>
+                <Footer />
             </main>
 
             {/* Mobile Nav (Floating Button) - Show only when sidebar is closed */}
             {!isSidebarOpen && (
                 <div className="fixed bottom-6 right-6 lg:hidden z-50">
-                    <button 
+                    <button
                         className="bg-primary text-white p-4 rounded-full shadow-xl flex items-center justify-center hover:scale-105 transition-transform"
                         onClick={toggleSidebar}
                     >

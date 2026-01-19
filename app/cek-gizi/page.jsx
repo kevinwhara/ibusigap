@@ -13,6 +13,9 @@ import {
 } from 'lucide-react';
 
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import SubmitButton from '@/components/SubmitButton';
+import AiOutput from '@/components/AiOutput';
 
 function NutritionCheck() {
   const [breakfast, setBreakfast] = useState('');
@@ -171,24 +174,14 @@ function NutritionCheck() {
               </div>
 
               {/* Save Button */}
-              <button
-                className="w-full bg-[#FF4081] hover:bg-[#d6336c] text-white font-bold py-4 px-6 rounded-xl shadow-lg shadow-[#FF4081]/20 transition-all transform active:scale-[0.99] flex items-center justify-center gap-2 text-lg"
-                onClick={handleSubmit}
-              >
-                <BarChart2 size={24} />
-                Simpan & Analisis Gizi
-              </button>
+              <SubmitButton eventhandler={handleSubmit} />
+
+              <AiOutput message="Belum ada analisis ..." />
             </div>
           </div>
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="mt-auto py-8 bg-white border-t border-[#eacdd7]">
-        <div className="max-w-7xl mx-auto px-10 text-center text-[#a14563] text-sm">
-          <p>© 2026 Cek Gizi Harian. Dibuat dengan cinta untuk Bunda dan Buah Hati.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
