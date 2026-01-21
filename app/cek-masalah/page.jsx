@@ -9,8 +9,8 @@ import Footer from '@/components/Footer';
 export default function CekMasalah() {
 
     const [complaints, setComplaints] = useState([
-        { id: 1, name: 'Pusing Hebat', subname: 'Severe dizziness', checked: true },
-        { id: 2, name: 'Kaki & Tangan Bengkak', subname: 'Swollen feet & hands', checked: true },
+        { id: 1, name: 'Pusing Hebat', subname: 'Severe dizziness', checked: false },
+        { id: 2, name: 'Kaki & Tangan Bengkak', subname: 'Swollen feet & hands', checked: false },
         { id: 3, name: 'Nyeri Perut Bawah', subname: 'Lower abdominal pain', checked: false },
         { id: 4, name: 'Perdarahan', subname: 'Bleeding', checked: false },
         { id: 5, name: 'Gerakan Janin Berkurang', subname: 'Reduced fetal movement', checked: false },
