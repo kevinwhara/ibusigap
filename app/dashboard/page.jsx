@@ -19,7 +19,7 @@ export default function Dashboard() {
     return (
         <div className="flex h-screen w-full font-sans">
             {/* Sidebar */}
-            <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
+            <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} userName="Bunda Nain" pregnancyWeek="Minggu ke-100" />
 
             {/* Overlay for mobile when sidebar is open */}
             {isSidebarOpen && (
