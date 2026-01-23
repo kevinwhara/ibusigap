@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { User, Users, LockKeyhole, Loader2 } from "lucide-react";
+import LeftHeroStart from "@/components/LeftHeroStart";
+
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import api from "@/lib/api";
-import LeftHeroStart from "@/components/LeftHeroStart";
 
 export default function SignupPage() {
     const router = useRouter();
@@ -185,6 +186,7 @@ export default function SignupPage() {
                                 <button
                                     type="submit"
                                     disabled={isLoading}
+                                    suppressHydrationWarning
                                     className="mt-4 w-full h-12 bg-primary hover:bg-primary-hover text-white font-bold rounded-xl flex items-center justify-center gap-2 disabled:opacity-50"
                                 >
                                     {isLoading ? <Loader2 className="animate-spin" /> : "Daftar Akun"}
