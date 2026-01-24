@@ -1,11 +1,8 @@
 "use client";
 import React, { useState } from 'react';
 import { BriefcaseMedical, Check } from 'lucide-react';
-import Navbar from '@/components/Navbar';
 import SubmitButton from '@/components/SubmitButton';
 import AiOutput from '@/components/AiOutput';
-import Footer from '@/components/Footer';
-
 export default function CekMasalah() {
 
     const [complaints, setComplaints] = useState([
@@ -64,7 +61,6 @@ export default function CekMasalah() {
     return (
         <div className="min-h-screen font-sans flex flex-col overflow-x-hidden">
 
-            <Navbar />
 
             {/* Main Content */}
             <main className=" w-full max-w-7xl mx-auto px-4 md:px-10 py-8">
@@ -236,7 +232,6 @@ export default function CekMasalah() {
 
                 </div>
             </main>
-            <Footer />
         </div>
     );
 }

@@ -12,8 +12,6 @@ import {
   BarChart2
 } from 'lucide-react';
 
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import SubmitButton from '@/components/SubmitButton';
 import AiOutput from '@/components/AiOutput';
 
@@ -45,8 +43,6 @@ function NutritionCheck() {
 
   return (
     <div className="min-h-screen bg-[#f8f5f6] text-[#1d0c12] antialiased flex flex-col">
-      {/* Header */}
-      <Navbar />
 
       {/* Main Content */}
       <main className="flex-grow px-4 sm:px-10 py-8">
@@ -181,7 +177,6 @@ function NutritionCheck() {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }
