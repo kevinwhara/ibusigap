@@ -7,7 +7,7 @@ export function proxy(request) {
 
     const token = request.cookies.get("accessToken")?.value;
 
-    const protectedRoutes = ["/dashboard", "/cek-gizi", "/cek-kesehatan", "/cek-masalah"];
+    const protectedRoutes = ["/dashboard", "/cek-gizi", "/cek-kesehatan", "/cek-masalah", "/pengaturan", "/jurnal-gizi", "/riwayat-medis", "/deteksi-gangguan"];
     const isProtectedRoute = protectedRoutes.some((route) => path.startsWith(route));
 
     if (isProtectedRoute && !token) {
