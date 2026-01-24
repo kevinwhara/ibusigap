@@ -3,6 +3,11 @@ import React, { useState } from 'react';
 import { BriefcaseMedical, Check } from 'lucide-react';
 import SubmitButton from '@/components/SubmitButton';
 import AiOutput from '@/components/AiOutput';
+import api from '@/lib/api';
+
+
+
+
 export default function CekMasalah() {
 
     const [complaints, setComplaints] = useState([
@@ -13,6 +18,16 @@ export default function CekMasalah() {
         { id: 5, name: 'Gerakan Janin Berkurang', subname: 'Reduced fetal movement', checked: false },
         { id: 6, name: 'Lainnya', subname: 'Other', checked: false }
     ]);
+
+    const aiPayload = {
+        mainComplaints: complaints
+            .filter(item => item.checked)
+            .map(item => item.name),
+    };
+
+    const responseLogin =  api.post("/health/complaints", aiPayload);
+    const aiResponse = responseLogin.data;
+    console.log("Response AI:", {aiResponse});
 
     const [formData, setFormData] = useState({
         complaintDetail: 'Kaki bengkak + pusing',
@@ -52,15 +67,14 @@ export default function CekMasalah() {
             }
         };
 
-        console.log(aiPayload);
-        alert('Data berhasil disimpan!');
+        console.log("Submitting AI Payload:", aiPayload);
+        alert("Form submitted! Check console for payload details.");
     };
 
 
 
     return (
         <div className="min-h-screen font-sans flex flex-col overflow-x-hidden">
-
 
             {/* Main Content */}
             <main className=" w-full max-w-7xl mx-auto px-4 md:px-10 py-8">
