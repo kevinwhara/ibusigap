@@ -101,7 +101,7 @@ export default function Dashboard() {
                         {/* Cards */}
                         <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
                             {/* Sleep Card */}
-                            <div className="flex flex-col md:flex-row gap-6 p-6 rounded-xl bg-white shadow-sm border border-transparent hover:border-primary/20 transition-all">
+                            <div className="flex flex-col md:flex-row gap-6 p-6 rounded-xl bg-white shadow-sm ">
                                 <div className="flex-1 flex flex-col gap-4">
                                     <div>
                                         <div className="flex items-center gap-2 mb-2">
@@ -113,42 +113,51 @@ export default function Dashboard() {
                                             Durasi tidur Bunda semalam hanya 5 jam. Untuk menjaga kesehatan janin, disarankan minimal 7-8 jam tidur berkualitas.
                                         </p>
                                     </div>
-                                    <button className="mt-auto flex items-center justify-center gap-2 w-full md:w-fit px-5 py-2.5 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">
-                                        <span className="material-symbols-outlined text-lg">bedtime</span>
-                                        <span className="text-sm font-medium">Tips Tidur Nyenyak</span>
-                                    </button>
                                 </div>
-                                <div
-                                    className="w-full md:w-48 aspect-video md:aspect-square bg-cover bg-center rounded-lg shadow-inner shrink-0"
-                                    style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDGFfqE3o1rTkTkIGyselVHYQoeHbBVc1WvhUu8kTu_00irltTjuaHD4IX_Gn-sVVmdzRjm1uXdXvmH0mPlBfXn1mOnvgjthWByYBcIls6OepX-CiYGZiZBejqdCUOjbrd-wvirS7X7fCTp2pNdn9VfMgQ0K4rDjZ4T7laMANfwsHoUgGjkC2mJ42aUHSZJ-u4PpsJOn73MXt5rMB8CgpF3MtOut7-6goTH3g-XyvpZy1pz0f29-aVPq_EhReH3Z_bUDTegvFJanmk")' }}
-                                    data-alt="Calm bedroom setting with warm lighting suitable for sleep"
-                                ></div>
                             </div>
-
-                            {/* Nutrition Card */}
-                            <div className="flex flex-col md:flex-row gap-6 p-6 rounded-xl bg-white shadow-sm border border-transparent hover:border-primary/20 transition-all">
+                            <div className="flex flex-col md:flex-row gap-6 p-6 rounded-xl bg-white shadow-sm ">
                                 <div className="flex-1 flex flex-col gap-4">
                                     <div>
                                         <div className="flex items-center gap-2 mb-2">
-                                            <span className="bg-primary/10 text-primary px-2 py-1 rounded text-xs font-bold uppercase">Nutrisi</span>
-                                            <span className="text-slate-400 text-xs">Mingguan</span>
+                                            <span className="bg-primary/10 text-primary px-2 py-1 rounded text-xs font-bold uppercase">Pola Tidur</span>
+                                            <span className="text-slate-400 text-xs">Hari ini</span>
                                         </div>
-                                        <h3 className="text-lg font-bold mb-2">Zat Besi Rendah</h3>
+                                        <h3 className="text-lg font-bold mb-2">Kurang Istirahat</h3>
                                         <p className="text-slate-600 text-sm leading-relaxed">
-                                            Asupan zat besi minggu ini sedikit di bawah target. Tingkatkan konsumsi sayuran hijau seperti bayam atau daging merah.
+                                            Durasi tidur Bunda semalam hanya 5 jam. Untuk menjaga kesehatan janin, disarankan minimal 7-8 jam tidur berkualitas.
                                         </p>
                                     </div>
-                                    <button className="mt-auto flex items-center justify-center gap-2 w-full md:w-fit px-5 py-2.5 bg-white border border-primary/30 text-primary rounded-lg hover:bg-primary/5 transition-colors">
-                                        <span className="material-symbols-outlined text-lg">restaurant</span>
-                                        <span className="text-sm font-medium">Lihat Menu Rekomendasi</span>
-                                    </button>
                                 </div>
-                                <div
-                                    className="w-full md:w-48 aspect-video md:aspect-square bg-cover bg-center rounded-lg shadow-inner shrink-0"
-                                    style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuCK-YC9oqmhy1GRjz6ZTZKwRbV70_WFdB7Jpkq8YCEBrFMga7VMItFm8SoySxMh7hn34Hihp20sTmjSkMzk_7rDbBKRrTWR0iCAzODMJI5K4MxAfV1kkpfpFF35LjG3I6TXOuG9VBdwJATL_i3Tg-56JikDzir9LYkgclUF0RRAluKFNBCvH4IEht0eAqOZazDDfjxQMRsFQZGBxu9yQ0PxpYFshyM-npXSChIufVccudxMBL5SANGw024pWfRqBZe-qCmmKeRD_wE")' }}
-                                    data-alt="Fresh healthy salad bowl with spinach and vegetables"
-                                ></div>
                             </div>
+                            <div className="flex flex-col md:flex-row gap-6 p-6 rounded-xl bg-white shadow-sm ">
+                                <div className="flex-1 flex flex-col gap-4">
+                                    <div>
+                                        <div className="flex items-center gap-2 mb-2">
+                                            <span className="bg-primary/10 text-primary px-2 py-1 rounded text-xs font-bold uppercase">Pola Tidur</span>
+                                            <span className="text-slate-400 text-xs">Hari ini</span>
+                                        </div>
+                                        <h3 className="text-lg font-bold mb-2">Kurang Istirahat</h3>
+                                        <p className="text-slate-600 text-sm leading-relaxed">
+                                            Durasi tidur Bunda semalam hanya 5 jam. Untuk menjaga kesehatan janin, disarankan minimal 7-8 jam tidur berkualitas.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="flex flex-col md:flex-row gap-6 p-6 rounded-xl bg-white shadow-sm ">
+                                <div className="flex-1 flex flex-col gap-4">
+                                    <div>
+                                        <div className="flex items-center gap-2 mb-2">
+                                            <span className="bg-primary/10 text-primary px-2 py-1 rounded text-xs font-bold uppercase">Pola Tidur</span>
+                                            <span className="text-slate-400 text-xs">Hari ini</span>
+                                        </div>
+                                        <h3 className="text-lg font-bold mb-2">Kurang Istirahat</h3>
+                                        <p className="text-slate-600 text-sm leading-relaxed">
+                                            Durasi tidur Bunda semalam hanya 5 jam. Untuk menjaga kesehatan janin, disarankan minimal 7-8 jam tidur berkualitas.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
